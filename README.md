@@ -1,4 +1,4 @@
 Zühal ÇELÝK
-030112001
+030112001	
 Sinyal Ýþleme Dersi
-MATLAB ile sentezleme
+MATLAB ile Sentezleme
