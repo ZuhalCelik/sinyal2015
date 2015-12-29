@@ -11,5 +11,5 @@ MATLAB ile sentezleme
 
 -->note.m : Frekansi ve olcusu bilinen notanin sinus sinyalini olusturan fonksiyon yazildi.
 -->notalar.png : Notalarin bulundugu resim dosyasi
--->notalar.txt : Notalar(yaziyla) ve olculerinin bulundugu text dosyasi
--->sentez.m : Bos dosya
+-->notalar.txt : Notalar(yaziyla), oktavlarýnýn ve olculerinin bulundugu text dosyasi
+-->sentez.m : Notalarýn seslerinin çalýndýðý ve grafiðinin çizdirildiði kodlarý içerir.
