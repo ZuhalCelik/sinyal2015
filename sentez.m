@@ -2,8 +2,8 @@
 Fs=2320; %ornekleme frekansý deger atamasý yapýldý.
 gecikme=round(Fs/10); %echo icin gecikme suresi tanýmlandý.
 notalar=[]; %notalar matrisine ilk deger atamasý yapýldý.
-duraklama=[]; %Fs/10000; %duraklama suresi degeri atandý.
-oktdegis=1; %oktav degerlerini degistiren degisken[-3,+3].
+duraklama=zeros(1,round(Fs/100)); %Fs/10000; %duraklama suresi degeri atandý.
+oktdegis=0; %oktav degerlerini degistiren degisken[-3,+3].
 dosya=fopen('notalar.txt','r'); %text dosyasýný acar,'r':okumak için.
 [nota,oktav,olcu]=textread('notalar.txt','%s%d%s','delimiter',','); %text dosyasý okundu ve , ile ayrýlmýs degiskenler yeni matrislere atandý.
 fclose(dosya); %text dosyasý kapatýldý.
@@ -20,11 +20,11 @@ for i=1:length(nota)
     notalar=[notalar sindalga duraklama]; %notalarýn sinyalleri arasýna bosluk eklenerek notalar matrisinde birlestirildi.
 end  
 %% Notalar matrisine echo ekleme
-for i=1:length(notalar)
-    if (i+gecikme)<=length(notalar) %gecikme notalar uzunlugunu asmadýgý surece islenecek sart.
-        notalar(i+gecikme)=notalar(i+gecikme)+0.3*notalar(i); %Fs, 10'da biri süresince geciktirilip(gecikme)
-    end                                               %++genliði %30 oranýnda düþürülerek kendisi ile toplandý.
-end
+% for i=1:length(notalar)
+%     if (i+gecikme)<=length(notalar) %gecikme notalar uzunlugunu asmadýgý surece islenecek sart.
+%         notalar(i+gecikme)=notalar(i+gecikme)+0.3*notalar(i); %Fs, 10'da biri süresince geciktirilip(gecikme)
+%     end                                               %++genliði %30 oranýnda düþürülerek kendisi ile toplandý.
+% end
 %% Notalar matrisi sinyallerinin tepe degeri 1'e normalize edildi.
 notalar=notalar/max(abs(notalar));
 %% Notalar matrisinin grafigi cizdirilip, ses olarak calýndý
