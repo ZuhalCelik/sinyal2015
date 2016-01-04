@@ -21,8 +21,8 @@ for i=1:length(nota)
 end  
 %% Notalar matrisine echo ekleme
 for i=1:length(notalar)
-    if gecikme<=length(notalar) %gecikme notalar uzunlugunu asmadýgý surece islenecek sart.
-        notalar(i)=notalar(i)+0.3*notalar(gecikme); %Fs, 10'da biri süresince geciktirilip(gecikme)
+    if (i+gecikme)<=length(notalar) %gecikme notalar uzunlugunu asmadýgý surece islenecek sart.
+        notalar(i+gecikme)=notalar(i+gecikme)+0.3*notalar(i); %Fs, 10'da biri süresince geciktirilip(gecikme)
     end                                               %++genliði %30 oranýnda düþürülerek kendisi ile toplandý.
 end
 %% Notalar matrisi sinyallerinin tepe degeri 1'e normalize edildi.
