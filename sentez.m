@@ -1,5 +1,5 @@
 %% Deger atamalarý, dosyadan deger cekme
-Fs=2323; %ornekleme frekansý deger atamasý yapýldý.
+Fs=2323; %ornekleme frekansý deger atamasý yapýldý.8192
 gecikme=round(Fs/10); %echo icin gecikme suresi tanýmlandý.
 notalar=[]; %notalar matrisine ilk deger atamasý yapýldý.
 duraklama=zeros(1,round(Fs/100)); %duraklama suresi degeri atandý.
@@ -16,7 +16,7 @@ end
 %% Notalar matrisi icinde notalarýn sinyallerini olusturma
 for i=1:length(nota)
     frekans=frek(nota{i},oktav(i)); %frek fonsiyonu cagýrýlarak i. notanýn frekans degeri hesaplandý. 
-    [sindalga,t]=note(frekans,str2num(olcu{i})); %note fonksiyonu cagýrýlarak i.notanýn sinus sinyali cizildi.
+    sindalga=note(frekans,str2num(olcu{i})); %note fonksiyonu cagýrýlarak i.notanýn sinus sinyali cizildi.
     notalar=[notalar sindalga duraklama]; %notalarýn sinyalleri arasýna bosluk eklenerek notalar matrisinde birlestirildi.
 end  
 %% Notalar matrisine echo ekleme
